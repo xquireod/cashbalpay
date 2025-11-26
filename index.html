@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CashBalPay — Secure Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#00c6ff"/><stop offset="1" stop-color="#0072ff"/></linearGradient></defs>
+        <rect rx="12" width="64" height="64" fill="url(#g)"/>
+        <g transform="translate(9,9)" fill="#fff">
+          <rect x="0" y="0" width="6" height="22" rx="1"></rect>
+          <rect x="10" y="0" width="6" height="28" rx="1"></rect>
+          <rect x="20" y="0" width="6" height="16" rx="1"></rect>
+        </g>
+      </svg>
+      <div class="title">CashBalPay</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- LOGIN CARD -->
+    <section class="card login-card" id="loginCard" aria-live="polite">
+      <h2>Account Login</h2>
+      <p class="muted">Secure access to your CashBalPay statement</p>
+
+      <label for="userid">User ID</label>
+      <input id="userid" type="text" placeholder="Enter userid" autocomplete="username" />
+
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter password" autocomplete="current-password" />
+
+      <div class="actions">
+        <button id="loginBtn">Login</button>
+      </div>
+
+      <div class="feedback" id="feedback" aria-hidden="true"></div>
+
+      <!-- <small class="hint">Demo credentials: <strong>userid:</strong> <code>tolman</code> &nbsp; <strong>password:</strong> <code>CashBal@2025</code></small> -->
+    </section>
+
+    <!-- STATEMENT CARD -->
+    <section class="card statement-card" id="statementCard" style="display:none;">
+      <div class="top-row">
+        <div>
+          <h1 class="statement-title">STATEMENT OF ACCOUNT</h1>
+          <div class="meta"><span id="date"></span> • To: <strong>Mr. Tolman Brian</strong></div>
+        </div>
+        <div class="seal-wrap" title="Approved">
+          <!-- approved seal SVG -->
+          <img src="assets/approved_seal.svg" alt="Approved seal" class="seal" />
+        </div>
+      </div>
+
+      <hr/>
+
+      <div class="statement-body">
+        <p class="label">To the holder</p>
+        <p class="amounts">Deposit amount: <strong>$20,000.00</strong> and <strong>$6,000.00</strong></p>
+        <p class="amounts">Balance: <strong>$26,000.00</strong></p>
+
+        <div class="notice">
+          We confirm your payments of <strong>$20,000</strong> and <strong>$6,000</strong> are currently held due to a low credit score with financial institutions. Please reach out to your financial advisor immediately.
+        </div>
+      </div>
+
+      <div class="statement-actions">
+        <!-- <button id="copyBtn">Copy Statement</button>
+        <button id="printBtn">Print</button>
+        <button id="dashboardBtn">View Dashboard</button> -->
+        <button id="logoutBtn" class="ghost">Logout</button>
+      </div>
+    </section>
+
+    <!-- DASHBOARD CARD -->
+    <section class="card dashboard-card" id="dashboardCard" style="display:none;">
+      <h2>Account Dashboard</h2>
+      <div class="dash-row">
+        <div class="dash-item">
+          <h3>Available Balance</h3>
+          <p class="big">$26,000.00</p>
+        </div>
+        <div class="dash-item">
+          <h3>Held Funds</h3>
+          <p class="big">$26,000.00</p>
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <label>Credit score impact</label>
+        <div class="progress">
+          <div class="bar" id="creditBar" style="width:40%"></div>
+        </div>
+        <small class="muted">Status: <span id="creditStatus">Below Recommended</span></small>
+      </div>
+
+      <div class="dash-actions">
+        <button id="contactAdvisorBtn">Contact Advisor</button>
+        <button id="backToStatementBtn" class="ghost">Back to Statement</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">© 2025 CashBalPay — Secure Digital Balance Services</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+:root{
+  --bg1: #00c6ff;
+  --bg2: #0072ff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0066cc;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Momo Trust Sans", ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  color:#111827;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+}
+.site-header{width:100%; padding:18px 20px; display:flex; justify-content:center; align-items:center; position:fixed; top:0; left:0; z-index:10}
+.brand{display:flex; align-items:center; gap:12px; color:white; text-shadow:0 2px 8px rgba(13, 42, 89, 0.2)}
+.logo{width:44px; height:44px}
+.title{font-size:20px; font-weight:700}
+
+.container{padding-top:86px; width:100%; max-width:980px; padding:100px 18px 60px; display:grid; place-items:center}
+
+.card{background:var(--card); width:100%; max-width:720px; border-radius:14px; padding:22px; box-shadow:0 12px 40px rgba(2,6,23,0.18);}
+
+/* Login */
+.login-card{max-width:420px; text-align:left}
+.login-card h2{margin:4px 0 6px; color:var(--accent)}
+.login-card .muted{color:var(--muted); margin-bottom:14px}
+label{display:block; margin-top:12px; font-size:13px; color:#374151}
+input[type="text"], input[type="password"]{width:100%; padding:12px 14px; margin-top:6px; border-radius:10px; border:1px solid #e6edf3; outline:none; font-size:15px; background:#fbfdff}
+input:focus{box-shadow:0 4px 12px rgba(3,102,204,0.08); border-color:var(--accent)}
+
+/* actions */
+.actions{margin-top:18px; display:flex; gap:8px}
+button{background:var(--accent); color:white; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:600}
+button.ghost{background:transparent; border:1px solid #e6edf3; color:var(--accent)}
+button:hover{transform:translateY(-2px); transition:transform .16s ease}
+
+/* feedback */
+.feedback{margin-top:14px; color:#b91c1c; font-weight:600; display:none}
+
+/* statement */
+.statement-card .top-row{display:flex; justify-content:space-between; align-items:center; gap:18px}
+.statement-title{margin:0; color:var(--accent); letter-spacing:1px}
+.meta{color:var(--muted); margin-top:6px}
+.seal-wrap{width:110px; display:flex; justify-content:center; align-items:center}
+.seal{width:96px; height:96px}
+
+/* body */
+.statement-body{margin-top:14px}
+.label{font-weight:700; color:#374151}
+.amounts{font-size:16px; margin:6px 0}
+.notice{background:linear-gradient(90deg,#f8fafc,#e6f2ff); border-left:6px solid var(--accent); padding:12px; border-radius:8px; margin-top:14px}
+
+/* statement actions */
+.statement-actions{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap}
+.muted{color:var(--muted)}
+.hint{display:block; margin-top:12px; color:var(--muted)}
+
+/* dashboard */
+.dashboard-card .dash-row{display:flex; gap:12px; margin-top:12px}
+.dash-item{flex:1; background:#f8fbff; padding:12px; border-radius:10px; border:1px solid #ecf5ff; text-align:center}
+.dash-item .big{font-weight:800; font-size:20px; margin:6px 0 0; color:var(--accent)}
+
+.progress-wrap{margin-top:14px}
+.progress{height:12px; background:#eef6ff; border-radius:999px; overflow:hidden; margin-top:6px}
+.progress .bar{height:100%; background:linear-gradient(90deg,#ffb703,#fb8500)}
+
+/* responsive */
+@media (max-width:520px){
+  .seal{width:72px;height:72px}
+  .brand .title{display:none}
+  .container{padding:120px 14px 40px}
+}
