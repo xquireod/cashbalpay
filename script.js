@@ -92,15 +92,15 @@ logoutBtn?.addEventListener('click', () => {
   setTimeout(()=> feedback.style.display='none', 1800);
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-    const allowed = ["", "index.html", "statement.html", "dashboard.html"];
+// window.addEventListener("DOMContentLoaded", () => {
+//     const allowed = ["", "index.html", "statement.html", "dashboard.html"];
 
-    let page = location.pathname.split("/").pop();
+//     let page = location.pathname.split("/").pop();
 
-    if (!allowed.includes(page)) {
-        location.replace("index.html");
-    }
-});
+//     if (!allowed.includes(page)) {
+//         location.replace("index.html");
+//     }
+// });
 
 
 contactAdvisorBtn?.addEventListener('click', () => {
